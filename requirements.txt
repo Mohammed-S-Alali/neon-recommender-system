@@ -13,4 +13,5 @@ tmdbv3api==1.6.1
 lxml==4.6.2
 urllib3==1.25.9
 requests==2.23.0
+surprise==0.1
 pickleshare==0.7.5
