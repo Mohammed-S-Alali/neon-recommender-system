@@ -1,0 +1,5 @@
+Requirement already satisfied: requests in d:\dsi\anaconda3\lib\site-packages (2.23.0)
+Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 in d:\dsi\anaconda3\lib\site-packages (from requests) (1.25.9)
+Requirement already satisfied: idna<3,>=2.5 in d:\dsi\anaconda3\lib\site-packages (from requests) (2.10)
+Requirement already satisfied: chardet<4,>=3.0.2 in d:\dsi\anaconda3\lib\site-packages (from requests) (3.0.4)
+Requirement already satisfied: certifi>=2017.4.17 in d:\dsi\anaconda3\lib\site-packages (from requests) (2020.6.20)
