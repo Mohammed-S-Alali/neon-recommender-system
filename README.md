@@ -178,7 +178,10 @@ Surprise was designed with the following purposes in mind:
 - We use SVD because it taking into account implicit ratings.
 
   
-  
+## Link to the application
+
+Check out the live demo: https://neon-recommendation-system.herokuapp.com/
+
 
 ## How To Run The Website ?
 

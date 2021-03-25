@@ -278,5 +278,17 @@ def recommend():
         vote_count=vote_count,release_date=release_date,runtime=runtime,status=status,genres=genres,
         movie_cards_0=movie_cards[0],movie_cards_1=movie_cards[1],movie_cards_2=movie_cards[2],movie_cards_3=movie_cards[3],movie_cards_4=movie_cards[4],movie_cards_5=movie_cards[5],casts=casts,cast_details=cast_details)
 
+@app.route('/about_us', methods=['GET', 'POST'])
+def about_us():
+    if request.method == 'POST':
+        # do stuff when the form is submitted
+
+        # redirect to end the POST handling
+        # the redirect can be to the same route or somewhere else
+        return redirect(url_for('home'))
+
+    # show the form, it wasn't submitted
+    return render_template('about_us.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Neon Recommendation System</title>
+  <title>Neon Recommendation System - About Us</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
   <meta name="description" content="Here is The Recommender system of Jawwy IPTV programs.">
 
   <!-- Google Fonts -->
@@ -27,41 +26,22 @@
 
   <!-- Add header css-->
   <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='header.css') }}">
-  <!-- <link rel= "stylesheet" type= "text/css" href= "/static/header.css"> -->
+  <link rel="stylesheet" href="{{ url_for('static',filename='about_us.css') }}"/>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-
-  <script type="text/javascript">
-    var films = {{suggestions|tojson}};
-  </script>
-
-  <style>
-    .select2-container .select2-selection--single{
-    height:34px !important;
-}
-.select2-container--default .select2-selection--single{
-         border: 1px solid #ccc !important; 
-     border-radius: 0px !important; 
-}
-
-  </style>
-
 </head>
 
-<body id="content" style="font-family: 'Noto Sans JP', sans-serif;">
-  
+<body id="content" style="font-family: 'Noto Sans JP', sans-serif; overflow-x: hidden;">
+    
   <!-- Add nav bootstrap 4 -->
   <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #e5aa09;">
     <a class="navbar-brand" href="/" style="white-space: pre-wrap;"><img src="../static/neon.png" style="width:4rem; height:4rem; margin-left:1rem;">Neon Recommendation System</a>
@@ -83,59 +63,67 @@
     </div>  
   </nav>
   
-    <div class="form-group shadow-textarea" style="margin-top: 30px;text-align: center;color: white;">
-
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
- 
-        <!-- Get the user id from user_id_list -->
-        {% if user_id_list|length > 1 %}
-
-        
-        <label for="user_id_dl">Choose your ID:</label>
-        <select class="form-control select2" name="user_id_dl" id='user_id_dl' size="10" style="background-color: #ffffff;border-color:#ffffff;width: 20%;color: #181818">
-        
-        <option value="" disabled selected hidden>Search here..</option>
-        <option value="None">None</option>
-
-        {% for user_id in user_id_list if not user_id_list.hidden %}
-
-        <option value="{{user_id}}">{{user_id}}</option>
-
-        {% endfor %}
-
-        </select>
-        {% endif %}
-
-      <script>
-        $('.select2').select2();
-    </script>
-
-      <input type="text" name="movie" class="movie form-control" id="autoComplete" autocomplete="off" placeholder="Enter the Movie Name" style="background-color: #ffffff;border-color:#ffffff;width: 60%;color: #181818" required="required" />
-        <br>
+  <div class="home-about">
+    <h2>About us</h2>
+    <p></p>
+    <div class="columns">
+      <div class="col fade-in">
+        <p>
+          In this capstone project, we developed a recommender system for IPTV in  
+Jawwy service that provided by STC.
+        </p>
+      </div>
     </div>
-
-    <div class="form-group" style="text-align: center;">
-      <button class="btn btn-primary btn-block movie-button" style="background-color: #e5aa09;text-align: center;border-color: #e58d09;width:120px;" disabled="true" >Enter</button><br><br>
-    </div>
-	</div>
-
-  <div id="loader" class="text-center">
-  </div>
-  
-  <div class="fail">
-    <center><h3 style="margin-bottom: 100px;">Sorry! The movie you requested is not in our database or user Id is not selected. 
-    Please check the spelling or try with other movies or select user Id!</h3></center>
   </div>
 
-	<div class="results">
-    <center>
-      <h2 id="name" class="text-uppercase"></h2>
-    </center>
-	</div>
-	  
-  <!-- Add footer -->
-  <footer>
+  <div class="home-more-stuff">
+    <div class="more-stuff-grid">
+      <img
+            src="{{ url_for('static',filename='performance.png') }}"
+            alt=""
+            style="max-width: 225px; max-height: 255px;"
+            class="slide-in from-left"
+          />
+
+      <p class="slide-in from-right">
+        The performance of the system measured by RMSE and Hit-Rate since 
+        it is a recommender system that concerns the most relevant and 
+        watched items to the customer.
+      </p>
+    </div>
+
+    <div class="more-stuff-grid">
+      <p class="slide-in from-left">
+        Python and JupyterLab are tools with Sklearn libraries for implementing 
+        the proposed recommender system. Also, build a content-based, collaborative filtering and popularity-Based recommender 
+        systems after doing EDA on the dataset.
+      </p>
+
+      <img
+            src="{{ url_for('static',filename='python_icon.png') }}"
+            alt=""
+            style="max-width: 225px; max-height: 255px;"
+            class="slide-in from-right"
+          />
+    </div>
+
+    <div class="more-stuff-grid">
+      <img
+            src="{{ url_for('static',filename='jawwy.png') }}"
+            alt=""
+            style="max-width: 225px; max-height: 255px;"
+            class="slide-in from-left"
+          />
+      <p class="slide-in from-right">
+        As a result, the system aids to enhance the use experience in IPTV and 
+        keeps users interactive. By the end, the recommender system developed 
+        to use on Jawwy IPTV.
+      </p>
+    </div>
+  </div>
+
+   <!-- Add footer -->
+   <footer>
     <div class="footer-top">
         <div class="container">
           
@@ -221,20 +209,14 @@
     <p class="footer-bottom-text">We are happy to recommend your favorite movies...Have a nice watching!</p>
 </footer>
 
-<div class="footer">Made with<span style="font-size:150%;color:rgb(241, 147, 40);"> &hearts; </span>by Neon</div>
+  <div class="footer">Made with<span style="font-size:150%;color:rgb(241, 147, 40);"> &hearts; </span>by Neon</div>
   
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
 
-<script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/js/autoComplete.min.js"></script>
-<script type="text/javascript" src="{{url_for('static', filename='autocomplete.js')}}"></script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript" src="{{url_for('static', filename='recommend.js')}}"></script>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
-
+  <script type="text/javascript" src="{{url_for('static', filename='about_us.js')}}"></script>
 
 </body>
 </html>
