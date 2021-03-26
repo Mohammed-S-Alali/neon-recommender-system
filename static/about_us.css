@@ -38,23 +38,48 @@
 
 .from-left{
     grid-column: 2/3 ;
+    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
 }
 
 .from-right{
     grid-column: 3/4;
-    transform: translateX(-50%);
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%);
 }
 
 .from-left,
-.from-right{
-    transition:  opacity 250ms ease-in,
-     transform 400ms ease-in;
-    opacity: 0;
+.from-right {
+  transition: opacity 250ms ease-in, -webkit-transform 400ms ease-in;
+  transition: opacity 250ms ease-in, transform 400ms ease-in;
+  transition: opacity 250ms ease-in, transform 400ms ease-in,
+    -webkit-transform 400ms ease-in;
+  opacity: 0;
 }
 
 .from-left.appear,
-.from-right.appear{
-    transform:  translateX(0);
-    opacity: 1;
+.from-right.appear {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  opacity: 1;
 }
+
+@media only screen and (min-width: 320px) and (max-width:475px){
+  
+    div.more-stuff-grid img{
+        max-width: 140px !important;    
+    }
+
+    div.more-stuff-grid p{
+        width: -webkit-fill-available;
+    }
+    
+    div.more-stuff-grid{
+      padding: 2em 0;
+      display: grid;
+      grid-gap: 0em;
+      align-items: center;
+      grid-template-columns: minmax(1em, 1fr) repeat(2, minmax(150px, 400px)) minmax( 2em, 1fr );
+    }
+  
+  }
