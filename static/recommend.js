@@ -111,7 +111,7 @@ function movie_recs(movie_title,movie_id,my_api_key,user_id){
       }
     },
     error: function(){
-      alert("error recs");
+      alert("Please try again!");
       $("#loader").delay(500).fadeOut();
     },
   }); 
