@@ -30,15 +30,28 @@ $(function() {
           user_id = undefined;
         }
       
-    if (title=="" && user_id == undefined) {
+    if ((title == null || title.trim() === '' || title=="") && user_id == undefined) {
+      $('.results').css('display','none');
+      $('.fail').css('display','none');
+      $('.fail_1').css('display','none');
+      $('.fail_2').css('display','none');
+      $('.fail_3').css('display','block');
+    }
+    else if ((title == null || title.trim() === '' || title=="") && user_id != undefined) {
+      $('.results').css('display','none');
+      $('.fail').css('display','none');
+      $('.fail_1').css('display','none');
+      $('.fail_2').css('display','block');
+      $('.fail_3').css('display','none');
+    }
+    else if(!(title == null || title.trim() === '' || title=="") && user_id == undefined){
       $('.results').css('display','none');
       $('.fail').css('display','block');
+      $('.fail_1').css('display','none');
+      $('.fail_2').css('display','none');
+      $('.fail_3').css('display','none');
     }
-    else if(title !="" && user_id == undefined){
-      $('.results').css('display','none');
-      $('.fail').css('display','block');
-    }
-    else if(title !="" && user_id != undefined){
+    else if(!(title == null || title.trim() === '' || title=="") && user_id != undefined){
       load_details(my_api_key,title,user_id);
     }
   });
@@ -60,16 +73,22 @@ function load_details(my_api_key,title,user_id){
 
     success: function(movie){
       if(movie.results.length<1){
-        $('.fail').css('display','block');
+        $('.fail').css('display','none');
+        $('.fail_1').css('display','block');
+        $('.fail_2').css('display','none');
+        $('.fail_3').css('display','none');
         $('.results').css('display','none');
         $("#loader").delay(500).fadeOut();
       }
       else{
         $("#loader").fadeIn();
         $('.fail').css('display','none');
-        $('.results').delay(1000).css('display','block');
+        $('.fail_1').css('display','none');
+        $('.fail_2').css('display','none');
+        $('.fail_3').css('display','none');
+        $('.results').delay(500).css('display','block');
         var movie_id = movie.results[0].id;
-        var movie_title = movie.results[0].original_title;
+        var movie_title = title;
         movie_recs(movie_title,movie_id,my_api_key,user_id);
       }
     },
@@ -88,12 +107,18 @@ function movie_recs(movie_title,movie_id,my_api_key,user_id){
     data:{'name':movie_title,'user_id':user_id},
     success: function(recs){
       if(recs=="Sorry! The movie you requested is not in our database. Please check the spelling or try with some other movies"){
-        $('.fail').css('display','block');
+        $('.fail').css('display','none');
+        $('.fail_1').css('display','block');
+        $('.fail_2').css('display','none');
+        $('.fail_3').css('display','none');
         $('.results').css('display','none');
         $("#loader").delay(500).fadeOut();
       }
       else{
         $('.fail').css('display','none');
+        $('.fail_1').css('display','none');
+        $('.fail_2').css('display','none');
+        $('.fail_3').css('display','none');
         $('.results').css('display','block');
         var movie_arr = []
         recs = recs.split('_');

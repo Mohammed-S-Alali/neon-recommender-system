@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Here is The Recommender system of Jawwy IPTV programs.">
-  <meta property="og:image" content="/static/neon.png">
+  <meta property="og:image" content="/static/img/neon.png">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
@@ -23,11 +23,10 @@
   <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
   
   <!-- Add icon to webpage -->
-  <link rel="shortcut icon" type="image/x-icon" href="../static/neon.png" />
+  <link rel="shortcut icon" type="image/x-icon" href="/static/img/neon.png" />
 
   <!-- Add header css-->
   <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='header.css') }}">
-  <!-- <link rel= "stylesheet" type= "text/css" href= "/static/header.css"> -->
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -59,8 +58,8 @@
 <body id="content" style="font-family: 'Noto Sans JP', sans-serif;">
   
   <!-- Add nav bootstrap 4 -->
-  <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #e5aa09;">
-    <a class="navbar-brand" href="/" style="white-space: pre-wrap;"><img src="../static/neon.png" style="width:4rem; height:4rem; margin-left:1rem;">Neon Recommendation System</a>
+  <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #f17e3b;">
+    <a class="navbar-brand" href="/" style="white-space: pre-wrap;"><img src="/static/img/neon.png" style="width:4rem; height:4rem;">Neon Recommendation System</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -88,7 +87,7 @@
         {% if user_id_list|length > 1 %}
 
         
-        <label for="user_id_dl">Choose your ID:</label>
+        <label for="user_id_dl">Choose ID:</label>
         <select class="form-control select2" name="user_id_dl" id='user_id_dl' size="10" style="background-color: #ffffff;border-color:#ffffff;color: #181818">
         
         <option value="" disabled selected hidden>Search here..</option>
@@ -112,7 +111,7 @@
     </div>
 
     <div class="form-group" style="text-align: center;">
-      <button class="btn btn-primary btn-block movie-button" style="background-color: #e5aa09;text-align: center;border-color: #e58d09;width:120px;" disabled="true" >Enter</button><br><br>
+      <button class="btn btn-primary btn-block movie-button" style="background-color: #f17e3b;text-align: center;border-color: #e58d09;width:120px;" disabled="true" >Enter</button><br><br>
     </div>
 	</div>
 
@@ -120,8 +119,23 @@
   </div>
   
   <div class="fail">
-    <center><h3 style="margin-bottom: 100px;">Sorry! The movie you requested is not in our database or user Id is not selected. 
-    Please check the spelling or try with other movies or select user Id!</h3></center>
+    <center><h3 style="margin-bottom: 100px;">Sorry! The user Id is not selected. 
+    Please select user Id!</h3></center>
+  </div>
+
+  <div class="fail_1">
+    <center><h3 style="margin-bottom: 100px;">Sorry! The movie you requested is not in our database. 
+    Please check the spelling or try with other movies!</h3></center>
+  </div>
+
+  <div class="fail_2">
+    <center><h3 style="margin-bottom: 100px;">Sorry! The movie field is empty. 
+    Please fill the movie field!</h3></center>
+  </div>
+
+  <div class="fail_3">
+    <center><h3 style="margin-bottom: 100px;">Sorry! The movie field is empty and user Id is not selected.<br>
+    Please fill the movie field and select user Id!</h3></center>
   </div>
 
 	<div class="results">
@@ -153,13 +167,13 @@
               style="padding-bottom: 10px;">
                     <h2>Mohammed S. Alali</h2>
                     <ul>
-                    <li><img src="/static/alali.png"></li>
+                    <li><img src="/static/img/alali.png"></li>
                     <li>Data Scientist</li>
                     <li><i>"The data will lead the revolution on film industry"</i></li>
                     <li>
-                      <a href="https://www.linkedin.com/in/m-s-alali/?locale=en_US"><i class="fa fa-linkedin"></i></a>
-                      <a href="mailto:mohammed.sadiq.alali@hotmail.com"><i class="fa fa-envelope"></i></a>
-                      <a href="https://github.com/Mohammed-S-Alali"><i class="fa fa-github"></i></a>
+                      <a href="https://www.linkedin.com/in/m-s-alali/?locale=en_US" class="page"><i class="fa fa-linkedin"></i></a>
+                      <a href="mailto:mohammed.sadiq.alali@hotmail.com" class="page"><i class="fa fa-envelope"></i></a>
+                      <a href="https://github.com/Mohammed-S-Alali" class="page"><i class="fa fa-github"></i></a>
                     </li>
                     </ul>
                 </div>
@@ -169,13 +183,13 @@
                 style="padding-bottom: 10px;">
                   <h2>Lama Al Harbi</h2>
                   <ul>
-                  <li><img src="/static/lama.jfif"></li>
+                  <li><img src="/static/img/lama.jfif"></li>
                   <li>Data Scientist</li>
                   <li><i>"Creative filmmakers learn from the data"</i></li>
                   <li>
-                    <a href="https://www.linkedin.com/in/lama-alroaithi/"><i class="fa fa-linkedin"></i></a>
-                    <a href="mailto:lamalharbi33@gmail.com"><i class="fa fa-envelope"></i></a>
-                    <a href="https://github.com/lamalharbi"><i class="fa fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/lama-alroaithi/" class="page"><i class="fa fa-linkedin"></i></a>
+                    <a href="mailto:lamalharbi33@gmail.com" class="page"><i class="fa fa-envelope"></i></a>
+                    <a href="https://github.com/lamalharbi" class="page"><i class="fa fa-github"></i></a>
                   </li>
                   </ul>
               </div>
@@ -185,13 +199,13 @@
               style="padding-bottom: 10px;">              
               <h2>Monirah Bin Taleb</h2>
               <ul>
-                <li><img src="/static/monirah.jfif"></li>
+                <li><img src="/static/img/monirah.jfif"></li>
                 <li>Data Scientist</li>
                 <li class="monirah"><i>"Data insights are coming movies"</i></li>
                 <li>
-                  <a href="https://www.linkedin.com/in/monirah-bin-taleb-626b25100/"><i class="fa fa-linkedin"></i></a>
-                  <a href="mailto:maemt2010@hotmail.com"><i class="fa fa-envelope"></i></a>
-                  <a href="https://github.com/Monirah-abdulaziz"><i class="fa fa-github"></i></a>
+                  <a href="https://www.linkedin.com/in/monirah-bin-taleb-626b25100/" class="page"><i class="fa fa-linkedin"></i></a>
+                  <a href="mailto:maemt2010@hotmail.com" class="page"><i class="fa fa-envelope"></i></a>
+                  <a href="https://github.com/Monirah-abdulaziz" class="page"><i class="fa fa-github"></i></a>
                 </li>
               </ul>
           </div>
@@ -201,16 +215,36 @@
           style="padding-bottom: 10px;">
             <h2>Aisha Hakami</h2>
             <ul>
-              <li><img src="/static/aisha.jpg"></li>
+              <li><img src="/static/img/aisha.jpg"></li>
               <li>Data Scientist</li>
               <li><i>"Recommending movies is a game of data science"</i></li>
               <li>
-                <a href="https://www.linkedin.com/in/aisha-hakami-/"><i class="fa fa-linkedin"></i></a>
-                <a href="mailto:aisha.y.hakami@gmail.com"><i class="fa fa-envelope"></i></a>
-                <a href="https://github.com/AishaHakami"><i class="fa fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/aisha-hakami-/" class="page"><i class="fa fa-linkedin"></i></a>
+                <a href="mailto:aisha.y.hakami@gmail.com" class="page"><i class="fa fa-envelope"></i></a>
+                <a href="https://github.com/AishaHakami" class="page"><i class="fa fa-github"></i></a>
               </li>
             </ul>
+          </div>
         </div>
+
+            <!-- Add Links row -->
+            <div class="row">
+              <!-- The Link div -->
+              <div class="col-md-3 col-sm-6 col-xs-12 segment-one md-mb-30 sm-mb-10">
+                    <h2>Links</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3 col-sm-6 col-xs-12 segment-one md-mb-30 sm-mb-10 links">
+              <ul>
+                <li><a href="/" style="color: #e8e8e8;">Home</a></li>
+                </ul>
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-12 segment-one md-mb-30 sm-mb-10 links">
+                <ul>
+                  <li><a href="{{ url_for('about_us') }}" style="color: #e8e8e8;">About Us</a></li>
+                </ul>
+                </div>
             </div>
         </div>
     </div>

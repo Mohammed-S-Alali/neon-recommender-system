@@ -23,7 +23,7 @@
   <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
   
   <!-- Add icon to webpage -->
-  <link rel="shortcut icon" type="image/x-icon" href="../static/neon.png" />
+  <link rel="shortcut icon" type="image/x-icon" href="../static/img/neon.png" />
 
   <!-- Add header css-->
   <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='header.css') }}">
@@ -44,8 +44,8 @@
 <body id="content" style="font-family: 'Noto Sans JP', sans-serif; overflow-x: hidden;">
     
   <!-- Add nav bootstrap 4 -->
-  <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #e5aa09;">
-    <a class="navbar-brand" href="/" style="white-space: pre-wrap;"><img src="../static/neon.png" style="width:4rem; height:4rem; margin-left:1rem;">Neon Recommendation System</a>
+  <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #f17e3b;">
+    <a class="navbar-brand" href="/" style="white-space: pre-wrap;"><img src="../static/img/neon.png" style="width:4rem; height:4rem;">Neon Recommendation System</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -65,7 +65,7 @@
   </nav>
   
   <div class="home-about">
-    <h2>About us</h2>
+    <h2 style="margin-left: 0.3rem;">About us</h2>
     <p></p>
     <div class="columns">
       <div class="col fade-in">
@@ -75,7 +75,7 @@ Jawwy service that provided by STC.
         </p>
 
         <div style="text-align: -webkit-center;">
-          <video controlsList="nodownload" poster="/static/video_poster.png" controls="" style="width: 80%;">
+          <video controlsList="nodownload" poster="/static/img/video_poster.png" controls="" style="width: 80%;">
             <source src="/static/media/promo.mp4" type="video/mp4">
             Your browser does not support video.
           </video>
@@ -87,7 +87,7 @@ Jawwy service that provided by STC.
   <div class="home-more-stuff">
     <div class="more-stuff-grid">
       <img
-            src="{{ url_for('static',filename='performance.png') }}"
+            src="/static/img/performance.png"
             alt=""
             style="max-width: 225px; max-height: 255px;"
             class="slide-in from-left"
@@ -108,16 +108,16 @@ Jawwy service that provided by STC.
       </p>
 
       <img
-            src="{{ url_for('static',filename='python_icon.png') }}"
+            src="/static/img/python_icon.png"
             alt=""
-            style="max-width: 225px; max-height: 255px; padding-left: 10px;"
+            style="max-width: 225px; max-height: 255px;"
             class="slide-in from-right"
           />
     </div>
 
     <div class="more-stuff-grid">
       <img
-            src="{{ url_for('static',filename='jawwy.png') }}"
+            src="/static/img/jawwy.png"
             alt=""
             style="max-width: 225px; max-height: 255px;"
             class="slide-in from-left"
@@ -153,13 +153,13 @@ Jawwy service that provided by STC.
               style="padding-bottom: 10px;">
                     <h2>Mohammed S. Alali</h2>
                     <ul>
-                    <li><img src="/static/alali.png"></li>
+                    <li><img src="/static/img/alali.png"></li>
                     <li>Data Scientist</li>
                     <li><i>"The data will lead the revolution on film industry"</i></li>
                     <li>
-                      <a href="https://www.linkedin.com/in/m-s-alali/?locale=en_US"><i class="fa fa-linkedin"></i></a>
-                      <a href="mailto:mohammed.sadiq.alali@hotmail.com"><i class="fa fa-envelope"></i></a>
-                      <a href="https://github.com/Mohammed-S-Alali"><i class="fa fa-github"></i></a>
+                      <a href="https://www.linkedin.com/in/m-s-alali/?locale=en_US" class="page"><i class="fa fa-linkedin"></i></a>
+                      <a href="mailto:mohammed.sadiq.alali@hotmail.com" class="page"><i class="fa fa-envelope"></i></a>
+                      <a href="https://github.com/Mohammed-S-Alali" class="page"><i class="fa fa-github"></i></a>
                     </li>
                     </ul>
                 </div>
@@ -169,13 +169,13 @@ Jawwy service that provided by STC.
                 style="padding-bottom: 10px;">
                   <h2>Lama Al Harbi</h2>
                   <ul>
-                  <li><img src="/static/lama.jfif"></li>
+                  <li><img src="/static/img/lama.jfif"></li>
                   <li>Data Scientist</li>
                   <li><i>"Creative filmmakers learn from the data"</i></li>
                   <li>
-                    <a href="https://www.linkedin.com/in/lama-alroaithi/"><i class="fa fa-linkedin"></i></a>
-                    <a href="mailto:lamalharbi33@gmail.com"><i class="fa fa-envelope"></i></a>
-                    <a href="https://github.com/lamalharbi"><i class="fa fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/lama-alroaithi/" class="page"><i class="fa fa-linkedin"></i></a>
+                    <a href="mailto:lamalharbi33@gmail.com" class="page"><i class="fa fa-envelope"></i></a>
+                    <a href="https://github.com/lamalharbi" class="page"><i class="fa fa-github"></i></a>
                   </li>
                   </ul>
               </div>
@@ -185,13 +185,13 @@ Jawwy service that provided by STC.
               style="padding-bottom: 10px;">              
               <h2>Monirah Bin Taleb</h2>
               <ul>
-                <li><img src="/static/monirah.jfif"></li>
+                <li><img src="/static/img/monirah.jfif"></li>
                 <li>Data Scientist</li>
                 <li class="monirah"><i>"Data insights are coming movies"</i></li>
                 <li>
-                  <a href="https://www.linkedin.com/in/monirah-bin-taleb-626b25100/"><i class="fa fa-linkedin"></i></a>
-                  <a href="mailto:maemt2010@hotmail.com"><i class="fa fa-envelope"></i></a>
-                  <a href="https://github.com/Monirah-abdulaziz"><i class="fa fa-github"></i></a>
+                  <a href="https://www.linkedin.com/in/monirah-bin-taleb-626b25100/" class="page"><i class="fa fa-linkedin"></i></a>
+                  <a href="mailto:maemt2010@hotmail.com" class="page"><i class="fa fa-envelope"></i></a>
+                  <a href="https://github.com/Monirah-abdulaziz" class="page"><i class="fa fa-github"></i></a>
                 </li>
               </ul>
           </div>
@@ -201,16 +201,36 @@ Jawwy service that provided by STC.
           style="padding-bottom: 10px;">
             <h2>Aisha Hakami</h2>
             <ul>
-              <li><img src="/static/aisha.jpg"></li>
+              <li><img src="/static/img/aisha.jpg"></li>
               <li>Data Scientist</li>
               <li><i>"Recommending movies is a game of data science"</i></li>
               <li>
-                <a href="https://www.linkedin.com/in/aisha-hakami-/"><i class="fa fa-linkedin"></i></a>
-                <a href="mailto:aisha.y.hakami@gmail.com"><i class="fa fa-envelope"></i></a>
-                <a href="https://github.com/AishaHakami"><i class="fa fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/aisha-hakami-/" class="page"><i class="fa fa-linkedin"></i></a>
+                <a href="mailto:aisha.y.hakami@gmail.com" class="page"><i class="fa fa-envelope"></i></a>
+                <a href="https://github.com/AishaHakami" class="page"><i class="fa fa-github"></i></a>
               </li>
             </ul>
+          </div>
         </div>
+
+            <!-- Add Links row -->
+            <div class="row">
+              <!-- The Link div -->
+              <div class="col-md-3 col-sm-6 col-xs-12 segment-one md-mb-30 sm-mb-10">
+                    <h2>Links</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3 col-sm-6 col-xs-12 segment-one md-mb-30 sm-mb-10 links">
+              <ul>
+                <li><a href="/" style="color: #e8e8e8;">Home</a></li>
+                </ul>
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-12 segment-one md-mb-30 sm-mb-10 links">
+                <ul>
+                  <li><a href="{{ url_for('about_us') }}" style="color: #e8e8e8;">About Us</a></li>
+                </ul>
+                </div>
             </div>
         </div>
     </div>

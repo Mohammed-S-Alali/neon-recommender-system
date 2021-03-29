@@ -63,6 +63,7 @@ def rcmnd0(m):
         return recommended_movies
 
 def rcmnd1(m,type_of_recommendation):
+    # m = m.lower()
     
     data,cosine_sim,cosine_sim_w,prec_watch_mat = similarity1()
     
@@ -276,15 +277,6 @@ def recommend():
     return render_template('recommend.html',title=title,poster=poster,overview=overview,vote_average=vote_average,
         vote_count=vote_count,release_date=release_date,runtime=runtime,status=status,genres=genres,
         movie_cards_0=movie_cards[0],movie_cards_1=movie_cards[1],movie_cards_2=movie_cards[2],movie_cards_3=movie_cards[3],movie_cards_4=movie_cards[4],movie_cards_5=movie_cards[5],casts=casts,cast_details=cast_details)
-
-@app.route('/about_us', methods=['GET', 'POST'])
-def about_us():
-    if request.method == 'POST':
-        # redirect to home page
-        return redirect(url_for('home'))
-
-    # render about us page
-    return render_template('about_us.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
